@@ -1,0 +1,81 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2025-12-03 19:58:48,classify,How to close dormant bank account?,how to close dormant bank account?,Retail banking,Retail banking,0.8986,credit_card:0.0759;credit_reporting:0.0016;debt_collection:0.0034;mortgages_and_loans:0.0152;retail_banking:0.8986;upi_transaction_failures:0.0053
+2025-12-03 19:58:51,explain,How to close dormant bank account?,how to close dormant bank account?,Retail banking,Retail banking,0.8986,credit_card:0.0759;credit_reporting:0.0016;debt_collection:0.0034;mortgages_and_loans:0.0152;retail_banking:0.8986;upi_transaction_failures:0.0053
+2025-12-03 19:59:17,classify,Can I open a joint account online?,can i open a joint account online?,Retail banking,Retail banking,0.6438,credit_card:0.0934;credit_reporting:0.1087;debt_collection:0.0903;mortgages_and_loans:0.0607;retail_banking:0.6438;upi_transaction_failures:0.0029
+2025-12-03 19:59:24,explain,Can I open a joint account online?,can i open a joint account online?,Retail banking,Retail banking,0.6438,credit_card:0.0934;credit_reporting:0.1087;debt_collection:0.0903;mortgages_and_loans:0.0607;retail_banking:0.6438;upi_transaction_failures:0.0029
+2025-12-03 21:51:26,classify,Hello,hello,Credit reporting,Credit reporting,0.3461,credit_card:0.0720;credit_reporting:0.3461;debt_collection:0.3112;mortgages_and_loans:0.1814;retail_banking:0.0118;upi_transaction_failures:0.0775
+2025-12-03 21:51:33,explain,Hello,hello,Credit reporting,Credit reporting,0.3461,credit_card:0.0720;credit_reporting:0.3461;debt_collection:0.3112;mortgages_and_loans:0.1814;retail_banking:0.0118;upi_transaction_failures:0.0775
+2025-12-04 09:19:44,classify,ATM Card blocked,atm card blocked,Upi transaction failures,Retail banking,0.7800,credit_card:0.1485;credit_reporting:0.0146;debt_collection:0.0130;mortgages_and_loans:0.0020;retail_banking:0.0419;upi_transaction_failures:0.7800
+2025-12-04 09:23:40,classify,ATM Card Lost,atm card lost,Upi transaction failures,Retail banking,0.5407,credit_card:0.3400;credit_reporting:0.0238;debt_collection:0.0169;mortgages_and_loans:0.0060;retail_banking:0.0725;upi_transaction_failures:0.5407
+2025-12-04 09:25:58,classify,SMS Charges hike not informed,sms charges hike not informed,Upi transaction failures,Upi transaction failures,0.6211,credit_card:0.0239;credit_reporting:0.1496;debt_collection:0.1179;mortgages_and_loans:0.0592;retail_banking:0.0283;upi_transaction_failures:0.6211
+2025-12-04 09:26:49,classify,My loan EMIs are not reflecting after payment.,my loan emis are not reflecting after payment.,Mortgages and loans,Mortgages and loans,0.9839,credit_card:0.0003;credit_reporting:0.0110;debt_collection:0.0031;mortgages_and_loans:0.9839;retail_banking:0.0001;upi_transaction_failures:0.0016
+2025-12-04 09:29:11,classify,Unable to login to netbanking after 2FA failed.,unable to login to netbanking after 2fa failed.,Upi transaction failures,Upi transaction failures,0.3618,credit_card:0.1127;credit_reporting:0.0651;debt_collection:0.0883;mortgages_and_loans:0.0598;retail_banking:0.3124;upi_transaction_failures:0.3618
+2025-12-04 09:30:44,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 09:31:46,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 09:37:38,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 09:45:48,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 09:47:12,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 09:48:29,classify,My UPI payment failed but amount debited.,my upi payment failed but amount debited.,Upi transaction failures,Upi transaction failures,0.9975,credit_card:0.0004;credit_reporting:0.0005;debt_collection:0.0009;mortgages_and_loans:0.0005;retail_banking:0.0002;upi_transaction_failures:0.9975
+2025-12-04 09:48:39,classify,Loan EMI not updated after payment.,loan emi not updated after payment.,Mortgages and loans,Mortgages and loans,0.9947,credit_card:0.0001;credit_reporting:0.0025;debt_collection:0.0024;mortgages_and_loans:0.9947;retail_banking:0.0001;upi_transaction_failures:0.0002
+2025-12-04 09:48:44,classify,Unknown charge on my credit card statement.,unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 09:49:09,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 09:50:30,classify,Credit Card Lost,credit card lost,Credit card,Credit card,0.9118,credit_card:0.9118;credit_reporting:0.0479;debt_collection:0.0240;mortgages_and_loans:0.0018;retail_banking:0.0060;upi_transaction_failures:0.0085
+2025-12-04 09:52:23,classify,My loan EMIs are not reflecting after payment.,my loan emis are not reflecting after payment.,Mortgages and loans,Mortgages and loans,0.9839,credit_card:0.0003;credit_reporting:0.0110;debt_collection:0.0031;mortgages_and_loans:0.9839;retail_banking:0.0001;upi_transaction_failures:0.0016
+2025-12-04 09:53:26,classify,Unknown charge on my credit card statement.,unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 09:53:48,classify,Loan EMI not reflecting after payment.,loan emi not reflecting after payment.,Mortgages and loans,Mortgages and loans,0.9839,credit_card:0.0003;credit_reporting:0.0110;debt_collection:0.0031;mortgages_and_loans:0.9839;retail_banking:0.0001;upi_transaction_failures:0.0016
+2025-12-04 10:35:24,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 10:35:40,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:36:20,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:37:17,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:38:12,classify,My loan EMIs are not reflecting after payment.,my loan emis are not reflecting after payment.,Mortgages and loans,Mortgages and loans,0.9839,credit_card:0.0003;credit_reporting:0.0110;debt_collection:0.0031;mortgages_and_loans:0.9839;retail_banking:0.0001;upi_transaction_failures:0.0016
+2025-12-04 10:44:11,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 10:45:39,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:49:16,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:51:58,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:54:42,classify,My loan EMIs are not reflecting after payment.,my loan emis are not reflecting after payment.,Mortgages and loans,Mortgages and loans,0.9839,credit_card:0.0003;credit_reporting:0.0110;debt_collection:0.0031;mortgages_and_loans:0.9839;retail_banking:0.0001;upi_transaction_failures:0.0016
+2025-12-04 10:55:50,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:58:41,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:58:58,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,Upi transaction failures,Upi transaction failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 10:59:52,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 11:03:05,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 11:05:01,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 11:06:37,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit card,Credit card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 11:10:57,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit Card,Credit Card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 11:11:55,classify,My UPI payment failed but amount debited and not reversed.,my upi payment failed but amount debited and not reversed.,UPI Transaction Failures,UPI Transaction Failures,0.9958,credit_card:0.0010;credit_reporting:0.0006;debt_collection:0.0012;mortgages_and_loans:0.0008;retail_banking:0.0006;upi_transaction_failures:0.9958
+2025-12-04 11:12:15,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit Card,Credit Card,0.6848,credit_card:0.6848;credit_reporting:0.1665;debt_collection:0.1400;mortgages_and_loans:0.0033;retail_banking:0.0014;upi_transaction_failures:0.0040
+2025-12-04 11:23:35,classify,UPI app doesnt work from last night,upi app doesnt work from last night,Retail Banking,UPI Transaction Failures,0.3045,credit_card:0.1660;credit_reporting:0.1468;debt_collection:0.1754;mortgages_and_loans:0.1547;retail_banking:0.3045;upi_transaction_failures:0.0526
+2025-12-04 11:39:23,classify,I have an unknown charge on my credit card statement.,i have an unknown charge on my credit card statement.,Credit Card,Credit Card,0.6885,credit_card:0.6885;credit_reporting:0.1648;debt_collection:0.1375;mortgages_and_loans:0.0034;retail_banking:0.0015;upi_transaction_failures:0.0042

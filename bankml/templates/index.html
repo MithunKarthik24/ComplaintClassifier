@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Complaint Classifier — Modern</title>
+  <style>
+    :root{
+      --bg-1: #0f172a;
+      --bg-2: #eef2ff;
+      --surface: #ffffff;
+      --glass: rgba(255,255,255,0.6);
+      --primary: linear-gradient(90deg,#3b82f6,#6366f1);
+      --accent: #6366f1;
+      --muted: #6b7280;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 14px;
+      --shadow-lg: 0 18px 50px rgba(16,24,40,0.08);
+      --shadow-sm: 0 6px 20px rgba(16,24,40,0.06);
+      --glass-border: rgba(99,102,241,0.08);
+    }
+
+    * { box-sizing: border-box; }
+
+    :root { --corp-font: "Corporate Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+    html,body {
+      height:100%;
+      margin:0;
+      font-family: var(--corp-font);
+      -webkit-font-smoothing:antialiased;
+      background:linear-gradient(180deg,#f7fbff,#eef6ff);
+      color:#071132;
+      font-weight:400;
+    }
+
+    /* Layout */
+    .wrap { max-width:1100px; margin:20px auto; padding:18px; }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px; }
+    .brand { display:flex; align-items:center; gap:12px; }
+
+    .logo { 
+      width:52px; height:52px; border-radius:12px; 
+      background:var(--primary); display:flex; 
+      align-items:center; justify-content:center; 
+      color:white; font-weight:600; 
+      box-shadow:var(--shadow-sm);
+    }
+
+    .title { font-weight:600; font-size:18px; letter-spacing:0.2px; }
+
+    .subtitle { font-size:13px; color:var(--muted); margin-top:3px; }
+
+    /* Card */
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow-lg);
+      border:1px solid rgba(99,102,241,0.03);
+      display:grid;
+      grid-template-columns: 1fr 380px;
+      gap:20px;
+      align-items:start;
+    }
+
+    /* Form */
+    .form-section { display:flex; flex-direction:column; gap:12px; }
+    label { font-size:13px; color:var(--muted); }
+    textarea {
+      width:100%; min-height:140px; padding:14px;
+      border-radius:12px; border:1px solid rgba(12,17,43,0.06);
+      font-size:15px; resize:vertical; background:#fff;
+      transition:box-shadow .12s ease;
+    }
+    textarea:focus { outline:none; box-shadow:0 12px 35px rgba(59,130,246,0.08); border-color:#60a5fa; }
+
+    .controls { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; align-items:center; }
+    .btn {
+      padding:10px 14px; border-radius:12px;
+      font-weight:600; border:0; cursor:pointer;
+      font-size:15px; font-family:var(--corp-font);
+    }
+    .btn-primary { background:var(--primary); color:#fff; }
+    .btn-ghost { background:transparent; border:1px solid rgba(12,17,43,0.06); color:#374151; }
+    .btn-clear { background:#fff; border:1px solid rgba(12,17,43,0.06); color:var(--muted); }
+
+    /* Example chips */
+    .examples { display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+    .chip {
+      background:#f1f5ff; color:#1e3a8a; padding:8px 12px;
+      border-radius:999px; font-weight:600; cursor:pointer;
+      border:1px solid rgba(99,102,241,0.06);
+      transition:transform .12s ease;
+    }
+    .chip:active { transform:translateY(1px); }
+
+    .hint { font-size:13px; color:var(--muted); margin-top:6px; }
+
+    /* Results Panel */
+    .panel {
+      background:linear-gradient(180deg,#fff,#fbfdff);
+      border-radius:12px;
+      padding:14px;
+      border:1px solid rgba(99,102,241,0.04);
+      box-shadow:var(--shadow-sm);
+    }
+
+    .result-head { display:flex; justify-content:space-between; align-items:center; gap:10px; }
+    .pred { font-weight:600; font-size:18px; }
+    .badge {
+      padding:8px 12px; border-radius:999px;
+      background:var(--accent); color:white;
+      font-weight:600; display:flex; align-items:center;
+    }
+
+    .meta { font-size:13px; color:var(--muted); margin-top:8px; }
+
+    .next-step {
+      margin-top:10px; padding:10px; border-radius:10px;
+      background:linear-gradient(180deg,#f8fbff,#ffffff);
+      border:1px solid rgba(12,17,43,0.03);
+    }
+.language-select{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(12,17,43,0.06);
+  font-size:15px;
+  background:#fff;
+}
+
+    /* Confidence List */
+    .conf-list { display:flex; flex-direction:column; gap:10px; margin-top:12px; }
+    .conf-item { display:flex; gap:12px; align-items:center; }
+    .conf-name { min-width:120px; font-weight:600; color:#0b1220; }
+    .conf-track { flex:1; height:14px; background:#f1f5ff; border-radius:999px; overflow:hidden; }
+    .conf-fill { height:100%; width:0%; border-radius:999px; transition:width .9s cubic-bezier(.2,.9,.3,1); }
+    .conf-val { width:64px; text-align:right; font-weight:600; color:var(--muted); }
+
+    /* Bar Colors */
+    .fill-1 { background:linear-gradient(90deg,#34d399,#10b981); }
+    .fill-2 { background:linear-gradient(90deg,#60a5fa,#3b82f6); }
+    .fill-3 { background:linear-gradient(90deg,#f59e0b,#f97316); }
+    .fill-4 { background:linear-gradient(90deg,#f472b6,#f43f5e); }
+
+    @media (max-width:980px) { .card { grid-template-columns:1fr; padding:14px; } }
+    @media (max-width:520px) {
+      .logo { width:44px; height:44px; }
+      .badge { padding:6px 10px; font-size:13px; }
+      .conf-val { width:48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <div class="brand">
+        <div class="logo">BC</div>
+        <div>
+          <div class="title">Complaint Classifier</div>
+          <div class="subtitle">Fast ML classification — secure & private</div>
+        </div>
+      </div>
+      <div class="muted small">v1.0</div>
+    </nav>
+
+    <main class="card">
+      <section class="form-section">
+        <div>
+          <h2 style="margin:0 0 6px 0;font-size:16px;font-weight:600;">Describe the complaint</h2>
+          <div class="meta">Paste full complaint. Include UTR/transaction IDs for better accuracy.</div>
+        </div>
+
+        <form method="post">
+          {% csrf_token %}
+	<label for="language">Select Language</label>
+
+<select name="language" id="language" class="language-select">
+  <option value="en">English</option>
+  <option value="ta">Tamil</option>
+  <option value="hi">Hindi</option>
+</select>
+          <label for="complaint_text">Complaint</label>
+          <textarea id="complaint_text" name="complaint_text">{{ complaint_text }}</textarea>
+
+          <div class="examples">
+            <button type="button" class="chip" data-ex="My UPI payment failed but amount debited and not reversed.">UPI failed</button>
+            <button type="button" class="chip" data-ex="I have an unknown charge on my credit card statement.">Unknown charge</button>
+            <button type="button" class="chip" data-ex="My loan EMIs are not reflecting after payment.">Loan EMI</button>
+          </div>
+
+          <div class="controls">
+            <button type="submit" name="action" value="classify" class="btn btn-primary">Classify →</button>
+            <button type="button" id="clearBtn" class="btn btn-clear">Clear</button>
+            <button type="button" id="copyBtn" class="btn btn-ghost">Copy</button>
+          </div>
+        </form>
+      </section>
+
+      <aside>
+        <div class="panel" id="resultPanel" style="display: {% if prediction %}block{% else %}none{% endif %};">
+          <div class="result-head">
+            <div>
+              <div class="pred">Final Category</div>
+              <div class="meta">Model result after applying business rules</div>
+            </div>
+            <div class="badge">{{ prediction|default:"—" }}</div>
+          </div>
+
+          {% if prediction %}
+            <div style="margin-top:12px">
+              {% if raw_prediction %}
+                <div class="meta">Model raw prediction: {{ raw_prediction }}</div>
+              {% endif %}
+              {% if max_prob %}
+                <div class="meta">Top confidence: {{ max_prob|floatformat:3 }}</div>
+              {% endif %}
+              {% if rule_used is not None %}
+                <div class="meta">Rule applied:
+                  {% if rule_used %}Yes (adjusted){% else %}No (model used){% endif %}
+                </div>
+              {% endif %}
+              {% if next_step %}
+                <div class="next-step">
+                  <div style="font-weight:600;">Suggested next step</div>
+                  <div class="meta">{{ next_step }}</div>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if probs_with_labels %}
+          <div class="panel" style="margin-top:14px">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-weight:600;">Model confidence (per class)</div>
+              <div class="meta">Sorted — top shown first</div>
+            </div>
+
+            <div class="conf-list">
+              {% for label, p in probs_with_labels %}
+                <div class="conf-item">
+                  <div class="conf-name">
+                    {% if forloop.first %}
+                      <span style="display:inline-block;background:#ffdd57;color:#000;padding:4px 8px;border-radius:999px;margin-right:8px;">Top</span>
+                    {% endif %}
+                    {{ label }}
+                  </div>
+                  <div class="conf-track">
+                    <div class="conf-fill {% if forloop.first %}fill-2{% elif forloop.counter == 2 %}fill-3{% elif forloop.counter == 3 %}fill-1{% else %}fill-4{% endif %}" data-prob="{{ p }}"></div>
+                  </div>
+                  <div class="conf-val">{{ p|floatformat:3 }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </aside>
+    </main>
+  </div>
+
+  <script>
+    // Autosize
+    const ta = document.getElementById('complaint_text');
+    if (ta) {
+      const resize = () => { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; };
+      ta.addEventListener('input', resize);
+      window.addEventListener('load', resize);
+    }
+
+    // Chips
+    document.querySelectorAll('.chip').forEach(ch => {
+      ch.addEventListener('click', () => {
+        if (!ta) return;
+        ta.value = ch.dataset.ex || ch.textContent;
+        ta.focus();
+        setTimeout(() => { ta.style.height = 'auto'; ta.style.height = ta.scrollHeight + 'px'; }, 40);
+      });
+    });
+
+    // Clear button
+    const clearBtn = document.getElementById('clearBtn');
+    if (clearBtn) clearBtn.addEventListener('click', () => {
+      if (ta) { ta.value = ''; ta.style.height = 'auto'; }
+    });
+
+    // Copy button
+    const copyBtn = document.getElementById('copyBtn');
+    if (copyBtn) copyBtn.addEventListener('click', () => {
+      if (!ta) return;
+      navigator.clipboard?.writeText(ta.value || '').then(() => {
+        const prev = copyBtn.textContent;
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => copyBtn.textContent = prev, 900);
+      }).catch(() => {
+        const prev = copyBtn.textContent;
+        copyBtn.textContent = 'Error';
+        setTimeout(() => copyBtn.textContent = prev, 900);
+      });
+    });
+
+    // Confidence bar animation
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.conf-fill').forEach((el, i) => {
+        const p = parseFloat(el.dataset.prob || 0);
+        const pct = Math.max(4, Math.round(p * 100));
+        setTimeout(() => el.style.width = pct + '%', 80 + i * 70);
+      });
+    });
+  </script>
+</body>
+</html>
